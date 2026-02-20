@@ -1,0 +1,212 @@
+.hiw-section {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background accent */
+.hiw-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(201, 168, 76, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hiw-header {
+    text-align: center;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Timeline Layout */
+.hiw-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Center Line */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold), var(--gold-light));
+    transform-origin: top;
+    border-radius: 2px;
+}
+
+/* Individual Steps */
+.hiw-step {
+    position: relative;
+    width: 50%;
+    padding: 0 40px 60px 40px;
+}
+
+.hiw-step:last-child {
+    padding-bottom: 20px;
+}
+
+/* Left Side Step (Even indices: 0, 2) */
+.step-left {
+    left: 0;
+    text-align: right;
+}
+
+/* Right Side Step (Odd indices: 1) */
+.step-right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Content Box */
+.step-content {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.step-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 168, 76, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Step Number overlay */
+.step-number {
+    position: absolute;
+    top: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(201, 168, 76, 0.1);
+    line-height: 1;
+    z-index: 0;
+    transition: color 0.4s ease;
+}
+
+.step-left .step-number {
+    right: 20px;
+}
+
+.step-right .step-number {
+    left: 20px;
+}
+
+.step-content:hover .step-number {
+    color: rgba(201, 168, 76, 0.25);
+}
+
+.step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.step-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Node (Icon circle on the line) */
+.step-node {
+    position: absolute;
+    top: 25px;
+    /* Aligns with content box top edge slightly down */
+    width: 44px;
+    height: 44px;
+    background: var(--black);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(201, 168, 76, 0.2);
+}
+
+.step-left .step-node {
+    right: -22px;
+}
+
+.step-right .step-node {
+    left: -22px;
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Call to Action */
+.hiw-cta-wrap {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hiw-cta {
+    padding: 14px 40px;
+    font-size: 0.95rem;
+}
+
+/* Responsive constraints */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+
+    .hiw-step {
+        width: 100%;
+        padding: 0 0 50px 60px;
+    }
+
+    .step-left,
+    .step-right {
+        left: 0;
+        text-align: left;
+    }
+
+    .step-left .step-number,
+    .step-right .step-number {
+        left: 20px;
+        right: auto;
+    }
+
+    .step-left .step-node,
+    .step-right .step-node {
+        left: -2px;
+        /* 20px line center - 22px half node */
+        right: auto;
+    }
+}

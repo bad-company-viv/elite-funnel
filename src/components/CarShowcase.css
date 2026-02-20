@@ -1,0 +1,241 @@
+.fleet-section {
+    background: linear-gradient(180deg, var(--black) 0%, var(--charcoal) 50%, var(--black) 100%);
+}
+
+/* Filters */
+.fleet-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 48px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    color: var(--text-muted);
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--black);
+    border-color: transparent;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+}
+
+/* Grid */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Card */
+.car-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(201, 168, 76, 0.12);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: var(--shadow-card);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center;
+}
+
+.car-card:hover {
+    border-color: rgba(201, 168, 76, 0.35);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(201, 168, 76, 0.1);
+}
+
+/* Badge */
+.car-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+/* Image */
+.car-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 175px;
+    background: transparent;
+}
+
+.car-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover .car-img {
+    transform: scale(1.05);
+}
+
+.car-img-shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.05), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* Body */
+.car-body {
+    padding: 20px;
+}
+
+.car-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 8px;
+}
+
+.car-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 2px;
+}
+
+.car-tagline {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.car-price-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    flex-shrink: 0;
+}
+
+.car-from {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.car-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.car-unit {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+/* Features */
+.car-features {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 0;
+}
+
+.car-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.feature-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+}
+
+/* Occasions */
+.car-occasions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.occasion-tag {
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--gold-dim);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* CTAs */
+.car-ctas {
+    display: flex;
+    gap: 10px;
+}
+
+.car-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .cars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+}

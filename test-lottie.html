@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+    <style>#lottie{width:200px;height:200px;background:#333;margin:50px;}</style>
+</head>
+<body>
+    <div id="lottie"></div>
+    <script>
+        fetch('./public/lotties/pulse.json')
+            .then(r => r.json())
+            .then(data => {
+                lottie.loadAnimation({
+                    container: document.getElementById('lottie'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    animationData: data
+                });
+            });
+    </script>
+</body>
+</html>
