@@ -84,16 +84,18 @@ export default function Hero() {
                         ◆ Pune&apos;s #1 Luxury Fleet
                     </motion.span>
 
-                    <motion.h1
-                        className="hero__headline"
+                    <motion.div
+                        className="hero__headline-logo-wrap"
                         variants={fade(0.4)}
                         initial="hidden"
                         animate="visible"
                     >
-                        Travel as a star
-                        <br />
-                        <span className="bright-text">in luxury cars.</span>
-                    </motion.h1>
+                        <img
+                            src="/elite-logo-2.png"
+                            alt="Elite Prime Cars"
+                            className="hero__headline-logo"
+                        />
+                    </motion.div>
                 </div>
             </div>
 
@@ -126,37 +128,34 @@ export default function Hero() {
                         animate="visible"
                     >
                         <a href="#booking" className="btn btn-gold">
-                            <span>📅</span> Check Availability
+                             Explore Fleet
                         </a>
                         <a href="tel:+919529375167" className="btn btn-outline">
                             <span>☎</span> Call Now
                         </a>
                     </motion.div>
-
-                    {/* Trust bar */}
-                    <motion.div
-                        className="hero__trust"
-                        variants={fade(1.0)}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        <div className="trust-item">
-                            <span className="trust-num">500+</span>
-                            <span className="trust-label">Happy Clients</span>
-                        </div>
-                        <div className="trust-divider" />
-                        <div className="trust-item">
-                            <span className="trust-num">10+</span>
-                            <span className="trust-label">Luxury Cars</span>
-                        </div>
-                        <div className="trust-divider" />
-                        <div className="trust-item">
-                            <span className="trust-num">24/7</span>
-                            <span className="trust-label">Availability</span>
-                        </div>
-                    </motion.div>
                 </div>
             </div>
+
+            <motion.div
+                className="hero__side-stats"
+                variants={fade(1.0)}
+                initial="hidden"
+                animate="visible"
+            >
+                <div className="hero__side-stat">
+                    <span className="hero__side-value">50+</span>
+                    <span className="hero__side-label">Premium Vehicles</span>
+                </div>
+                <div className="hero__side-stat">
+                    <span className="hero__side-value">24/7</span>
+                    <span className="hero__side-label">Concierge Service</span>
+                </div>
+                <div className="hero__side-stat">
+                    <span className="hero__side-value">5★</span>
+                    <span className="hero__side-label">Client Rating</span>
+                </div>
+            </motion.div>
 
             {/* Scroll indicator */}
             <motion.div

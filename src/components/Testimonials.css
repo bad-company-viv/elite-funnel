@@ -71,15 +71,15 @@
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+    background: linear-gradient(135deg, var(--gold), var(--gold));
     color: var(--black);
     font-weight: 700;
     font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(201, 168, 76, 0.4);
-    box-shadow: 0 0 20px rgba(201, 168, 76, 0.25);
+    border: 2px solid rgba(255, 212, 71, 0.4);
+    box-shadow: 0 0 20px rgba(255, 212, 71, 0.25);
 }
 
 .avatar-hint {
@@ -111,12 +111,6 @@
     display: block;
 }
 
-.author-location {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    display: block;
-}
-
 /* Navigation */
 .testi-nav {
     display: flex;
@@ -129,7 +123,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(201, 168, 76, 0.25);
+    background: rgba(255, 212, 71, 0.25);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -138,7 +132,7 @@
 .testi-dot.active {
     background: var(--gold);
     transform: scale(1.4);
-    box-shadow: 0 0 10px rgba(201, 168, 76, 0.5);
+    box-shadow: 0 0 10px rgba(255, 212, 71, 0.5);
 }
 
 .testi-arrows {
@@ -152,7 +146,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid rgba(201, 168, 76, 0.3);
+    border: 1px solid rgba(255, 212, 71, 0.3);
     background: transparent;
     color: var(--gold);
     font-size: 1.1rem;
@@ -164,7 +158,7 @@
 }
 
 .arrow-btn:hover {
-    background: rgba(201, 168, 76, 0.1);
+    background: rgba(255, 212, 71, 0.1);
     border-color: var(--gold);
     transform: scale(1.08);
 }
@@ -191,7 +185,7 @@
     height: 48px;
     border-radius: 50%;
     background: var(--charcoal-3);
-    border: 2px solid rgba(201, 168, 76, 0.2);
+    border: 2px solid rgba(255, 212, 71, 0.2);
     color: var(--text-muted);
     font-size: 0.75rem;
     font-weight: 700;
@@ -209,9 +203,9 @@
 
 .strip-avatar.strip-active {
     border-color: var(--gold);
-    background: rgba(201, 168, 76, 0.12);
+    background: rgba(255, 212, 71, 0.12);
     color: var(--gold);
-    box-shadow: 0 0 16px rgba(201, 168, 76, 0.3);
+    box-shadow: 0 0 16px rgba(255, 212, 71, 0.3);
 }
 
 .strip-hint {
@@ -222,8 +216,8 @@
 }
 
 .strip-hint code {
-    background: rgba(201, 168, 76, 0.1);
-    color: var(--gold-light);
+    background: rgba(255, 212, 71, 0.1);
+    color: var(--gold);
     padding: 1px 6px;
     border-radius: 4px;
     font-family: monospace;
@@ -290,7 +284,7 @@
 
 .rbar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--gold-dim), var(--gold-light));
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
     border-radius: 2px;
 }
 

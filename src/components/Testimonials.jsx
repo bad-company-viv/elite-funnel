@@ -7,7 +7,6 @@ const TESTIMONIALS = [
         id: 1,
         name: 'Rajesh Sharma',
         occasion: 'Wedding Client',
-        location: 'Mumbai',
         text: "Absolutely fantastic experience! The Mercedes E-Class was immaculate and the chauffeur was professional and courteous. Made our wedding day even more special. Highly recommended for anyone looking for luxury car rentals in Mumbai.",
         rating: 5,
         initials: 'RS',
@@ -16,7 +15,6 @@ const TESTIMONIALS = [
         id: 2,
         name: 'Priya Patel',
         occasion: 'Corporate Client',
-        location: 'Pune',
         text: "Excellent service from start to finish. Booked the BMW 7 Series for a corporate event and it exceeded all expectations. The attention to detail and punctuality was remarkable. Will definitely use again!",
         rating: 5,
         initials: 'PP',
@@ -25,7 +23,6 @@ const TESTIMONIALS = [
         id: 3,
         name: 'Vikram Singh',
         occasion: 'Family Trip',
-        location: 'Jaipur',
         text: "The Range Rover was perfect for our family trip to Udaipur. Spacious, comfortable, and the driver knew all the best routes. The entire experience was seamless and luxurious. Worth every penny!",
         rating: 5,
         initials: 'VS',
@@ -34,7 +31,6 @@ const TESTIMONIALS = [
         id: 4,
         name: 'Anita Desai',
         occasion: 'Corporate Client',
-        location: 'Gurgaon',
         text: "Used their services for airport transfers and client meetings. The S-Class is simply the best car for business. Always on time, impeccably maintained vehicles. They understand the meaning of luxury service.",
         rating: 5,
         initials: 'AD',
@@ -43,7 +39,6 @@ const TESTIMONIALS = [
         id: 5,
         name: 'Amit Malhotra',
         occasion: 'Business Trip',
-        location: 'Mumbai',
         text: "Hired the Audi A6 for a week-long business trip. Superb comfort, latest features, and excellent customer service. The team went above and beyond to accommodate our schedule changes.",
         rating: 5,
         initials: 'AM',
@@ -52,7 +47,6 @@ const TESTIMONIALS = [
         id: 6,
         name: 'Sneha Kapoor',
         occasion: 'Regular Client',
-        location: 'Pune',
         text: "My go-to service for luxury car rentals. Have used them multiple times for various occasions. Consistently excellent service, well-maintained fleet, and reasonable pricing for the luxury provided.",
         rating: 5,
         initials: 'SK',
@@ -106,7 +100,6 @@ export default function Testimonials() {
                                 <div>
                                     <strong className="author-name">{t.name}</strong>
                                     <span className="author-occasion">{t.occasion}</span>
-                                    <span className="author-location">📍 {t.location}</span>
                                 </div>
                             </div>
                         </motion.div>

@@ -25,6 +25,15 @@ export default function App() {
       <UrgencyBanner />
       <FAQ />
       <Footer />
+      <a
+        href="https://wa.me/919529375167?text=Hi%2C%20I%20want%20to%20book%20a%20luxury%20car%20in%20Pune"
+        target="_blank"
+        rel="noreferrer"
+        className="floating-whatsapp-link"
+        aria-label="Chat on WhatsApp"
+      >
+        <img src="/whatsapp.webp" alt="WhatsApp" className="floating-whatsapp-image" />
+      </a>
     </div>
   )
 }

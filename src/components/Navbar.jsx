@@ -1,51 +1,40 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import './Navbar.css'
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import "./Navbar.css";
 
 export default function Navbar() {
-    const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 60)
-        window.addEventListener('scroll', onScroll)
-        return () => window.removeEventListener('scroll', onScroll)
-    }, [])
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    return (
-        <motion.nav
-            className={`navbar ${scrolled ? 'navbar--solid' : ''}`}
-            initial={{ y: -80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-        >
-            <div className="container navbar__inner">
-                {/* Logo */}
-                <a href="#" className="navbar__logo">
-                    <img
-                        src="/elite-logo-white.png"
-                        alt="Elite Prime Cars"
-                        className="navbar__logo-image"
-                    />
-                </a>
+  return (
+    <motion.nav
+      className={`navbar ${scrolled ? "navbar--solid" : ""}`}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
+      <div className="container navbar__inner">
+        {/* Logo */}
+        <a href="#" className="navbar__logo">
+          <img
+            src="/logo.png"
+            alt="Elite Prime Cars"
+            className="navbar__logo-image"
+          />
+        </a>
 
-                {/* CTAs */}
-                <div className="navbar__actions">
-                    <a
-                        href="https://wa.me/919529375167?text=Hi%2C%20I%20want%20to%20book%20a%20luxury%20car%20in%20Pune"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-whatsapp navbar__cta"
-                    >
-                        💬 WhatsApp
-                    </a>
-                    <a
-                        href="tel:+919529375167"
-                        className="btn btn-gold navbar__cta"
-                    >
-                        ☎ Call Now
-                    </a>
-                </div>
-            </div>
-        </motion.nav>
-    )
+        {/* CTAs */}
+        <div className="navbar__actions">
+          <a href="#quote" className="btn navbar__cta navbar__cta-book">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </motion.nav>
+  );
 }

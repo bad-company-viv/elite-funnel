@@ -12,7 +12,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(201, 168, 76, 0.03) 0%, transparent 60%);
+    background: radial-gradient(circle at center, rgba(255, 212, 71, 0.03) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -22,6 +22,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hiw-hero-banner {
+    position: relative;
+    margin: 56px auto 0;
+    max-width: 1220px;
+    min-height: 430px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 212, 71, 0.3);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45), 0 0 48px rgba(255, 212, 71, 0.16);
+    display: flex;
+    align-items: center;
+    padding: clamp(20px, 4vw, 56px);
+    background:
+        linear-gradient(90deg, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.66) 34%, rgba(8, 8, 8, 0.35) 60%, rgba(8, 8, 8, 0.42) 100%),
+        url('/images/heli.png') center / cover no-repeat;
+}
+
+.hiw-hero-banner__text {
+    margin: 0;
+    max-width: 440px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 4vw, 3.1rem);
+    line-height: 1.12;
+    color: var(--white);
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.hiw-hero-banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.hiw-hero-banner__cta {
+    padding: 12px 30px;
+    font-size: 0.86rem;
+    letter-spacing: 2px;
 }
 
 /* Timeline Layout */
@@ -50,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, var(--gold), var(--gold-light));
+    background: var(--gold-gradient);
     transform-origin: top;
     border-radius: 2px;
 }
@@ -91,7 +131,7 @@
 
 .step-content:hover {
     transform: translateY(-5px);
-    border-color: rgba(201, 168, 76, 0.3);
+    border-color: rgba(255, 212, 71, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -102,7 +142,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     font-weight: 700;
-    color: rgba(201, 168, 76, 0.1);
+    color: rgba(255, 212, 71, 0.1);
     line-height: 1;
     z-index: 0;
     transition: color 0.4s ease;
@@ -117,7 +157,7 @@
 }
 
 .step-content:hover .step-number {
-    color: rgba(201, 168, 76, 0.25);
+    color: rgba(255, 212, 71, 0.25);
 }
 
 .step-title {
@@ -152,7 +192,7 @@
     justify-content: center;
     color: var(--gold);
     z-index: 2;
-    box-shadow: 0 0 15px rgba(201, 168, 76, 0.2);
+    box-shadow: 0 0 15px rgba(255, 212, 71, 0.2);
 }
 
 .step-left .step-node {
@@ -182,6 +222,25 @@
 
 /* Responsive constraints */
 @media (max-width: 768px) {
+    .hiw-hero-banner {
+        min-height: 320px;
+        margin-top: 44px;
+        margin-bottom: 0;
+        background:
+            linear-gradient(90deg, rgba(8, 8, 8, 0.9) 0%, rgba(8, 8, 8, 0.7) 48%, rgba(8, 8, 8, 0.48) 100%),
+            url('/images/heli.png') 70% center / cover no-repeat;
+    }
+
+    .hiw-hero-banner__text {
+        max-width: 280px;
+    }
+
+    .hiw-hero-banner__cta {
+        padding: 11px 22px;
+        font-size: 0.8rem;
+        letter-spacing: 1.7px;
+    }
+
     .timeline-line {
         left: 20px;
     }

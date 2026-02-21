@@ -13,7 +13,7 @@
 
 .filter-btn {
     background: transparent;
-    border: 1px solid rgba(201, 168, 76, 0.2);
+    border: 1px solid rgba(255, 212, 71, 0.2);
     color: var(--text-muted);
     padding: 8px 22px;
     border-radius: 50px;
@@ -26,11 +26,11 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: var(--gold-gradient);
     color: var(--black);
     border-color: transparent;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+    box-shadow: 0 4px 16px rgba(255, 212, 71, 0.3);
 }
 
 /* Grid */
@@ -43,7 +43,7 @@
 /* Card */
 .car-card {
     background: var(--card-bg);
-    border: 1px solid rgba(201, 168, 76, 0.12);
+    border: 1px solid rgba(255, 212, 71, 0.12);
     border-radius: var(--radius-lg);
     overflow: hidden;
     position: relative;
@@ -54,8 +54,53 @@
 }
 
 .car-card:hover {
-    border-color: rgba(201, 168, 76, 0.35);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(201, 168, 76, 0.1);
+    border-color: rgba(255, 212, 71, 0.35);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 212, 71, 0.1);
+}
+
+.car-card--highlight {
+    border-color: rgba(255, 212, 71, 0.55);
+    isolation: isolate;
+    background:
+        radial-gradient(circle at center,
+            rgba(255, 212, 71, 0.18) 0%,
+            rgba(255, 212, 71, 0.10) 44%,
+            rgba(255, 212, 71, 0.04) 68%,
+            rgba(18, 18, 18, 0.94) 100%),
+        var(--card-bg);
+    box-shadow:
+        0 32px 86px rgba(0, 0, 0, 0.72),
+        0 0 0 1px rgba(255, 212, 71, 0.25),
+        0 0 72px rgba(255, 212, 71, 0.28);
+}
+
+.car-card--highlight>* {
+    position: relative;
+    z-index: 1;
+}
+
+.car-card--highlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center,
+            rgba(255, 212, 71, 0.16) 0%,
+            rgba(255, 212, 71, 0.08) 48%,
+            transparent 76%);
+}
+
+.car-card--highlight:hover {
+    border-color: rgba(255, 212, 71, 0.7);
+    box-shadow:
+        0 34px 94px rgba(0, 0, 0, 0.74),
+        0 0 0 1px rgba(255, 212, 71, 0.34),
+        0 0 94px rgba(255, 212, 71, 0.36);
+}
+
+.car-card--highlight .car-tagline {
+    color: rgba(255, 212, 71, 0.78);
 }
 
 /* Badge */
@@ -99,7 +144,7 @@
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.05), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 212, 71, 0.05), transparent);
     animation: shimmer 3s infinite;
 }
 
@@ -209,9 +254,9 @@
     text-transform: uppercase;
     padding: 3px 10px;
     border-radius: 50px;
-    background: rgba(201, 168, 76, 0.1);
-    color: var(--gold-dim);
-    border: 1px solid rgba(201, 168, 76, 0.2);
+    background: rgba(255, 212, 71, 0.1);
+    color: var(--gold);
+    border: 1px solid rgba(255, 212, 71, 0.2);
 }
 
 /* CTAs */

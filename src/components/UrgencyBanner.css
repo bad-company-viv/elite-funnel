@@ -14,8 +14,8 @@
     position: absolute;
     inset: 0;
     background-image: repeating-linear-gradient(-45deg,
-            rgba(201, 168, 76, 0.03) 0px,
-            rgba(201, 168, 76, 0.03) 1px,
+            rgba(255, 212, 71, 0.03) 0px,
+            rgba(255, 212, 71, 0.03) 1px,
             transparent 1px,
             transparent 40px);
 }
@@ -73,7 +73,7 @@
 }
 
 .urgency-title span {
-    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -111,12 +111,14 @@
     font-family: 'Playfair Display', serif;
     font-size: 5rem;
     font-weight: 800;
-    line-height: 1;
-    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    line-height: 1.1;
+    display: inline-block;
+    padding-bottom: 0.04em;
+    background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.5));
+    filter: drop-shadow(0 0 30px rgba(var(--gold-rgb), 0.5));
 }
 
 .counter-label {
@@ -129,7 +131,7 @@
 
 .counter-divider {
     height: 1px;
-    background: rgba(201, 168, 76, 0.15);
+    background: rgba(255, 212, 71, 0.15);
     margin: 0 0 20px;
 }
 

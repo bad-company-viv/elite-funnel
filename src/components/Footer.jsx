@@ -25,10 +25,10 @@ export default function Footer() {
                             rel="noreferrer"
                             className="btn btn-gold"
                         >
-                            💬 WhatsApp Us
+                            WhatsApp Us
                         </a>
-                        <a href="tel:+919529375167" className="btn btn-outline">
-                            ☎ +91 95293 75167
+                        <a href="tel:+919920053379" className="btn btn-outline">
+                            ☎ +91 9920053379
                         </a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ export default function Footer() {
                 <div className="footer-brand">
                     <div className="footer-logo">
                         <img
-                            src="/elite-logo-white.png"
+                            src="/elite-logo-2.png"
                             alt="Elite Prime Cars"
                             className="footer-logo-image"
                         />
@@ -49,10 +49,10 @@ export default function Footer() {
                     </p>
                     <div className="footer-contact">
                         <a href="tel:+919529375167" className="footer-contact-item">
-                            <span>☎</span> +91 95293 75167
+                            <span>☎</span> +91 9920053379
                         </a>
-                        <a href="mailto:care@eliteprimecars.com" className="footer-contact-item">
-                            <span>✉</span> care@eliteprimecars.com
+                        <a href="mailto:book@eliteprimecars.com" className="footer-contact-item footer-contact-item--mail">
+                            <span id='mail'>✉</span> book@eliteprimecars.com
                         </a>
                         <div className="footer-contact-item">
                             <span>📍</span> Pune, Maharashtra, India

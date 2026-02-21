@@ -62,7 +62,7 @@ export default function WhyUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.15 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
-                            whileHover={{ y: -6, borderColor: 'rgba(201,168,76,0.4)' }}
+                            whileHover={{ y: -6, borderColor: 'rgba(255, 212, 71, 0.4)' }}
                         >
                             <div className="why-icon">{f.icon}</div>
                             <h3 className="why-title">{f.title}</h3>

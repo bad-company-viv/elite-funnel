@@ -140,7 +140,7 @@ export default function QuoteForm() {
                         </div>
                     )}
 
-                    <button type="submit" className="submit-btn" disabled={isSubmitted}>
+                    <button type="submit" className="btn btn-gold submit-btn" disabled={isSubmitted}>
                         {isSubmitted ? 'REQUESTING...' : 'REQUEST QUOTE'}
                     </button>
                 </motion.form>

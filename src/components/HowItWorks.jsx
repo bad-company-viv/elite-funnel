@@ -113,6 +113,21 @@ export default function HowItWorks() {
                         Explore Fleet
                     </a>
                 </motion.div>
+
+                <motion.div
+                    className="hiw-hero-banner"
+                    initial={{ opacity: 0, y: 28 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <div className="hiw-hero-banner__content">
+                        <h3 className="hiw-hero-banner__text">For those who have arrived early in life.</h3>
+                        <button type="button" className="btn btn-gold hiw-hero-banner__cta">
+                            By Invite Only
+                        </button>
+                    </div>
+                </motion.div>
             </div>
         </section>
     )

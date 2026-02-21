@@ -12,7 +12,7 @@
     background: rgba(8, 8, 8, 0.92);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    border-bottom: 1px solid rgba(255, 212, 71, 0.15);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -21,6 +21,8 @@
     align-items: center;
     justify-content: space-between;
     height: 76px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 /* ── Logo ── */
@@ -48,17 +50,46 @@
     padding: 10px 20px;
 }
 
+.navbar__cta-book {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 6px 16px rgba(0, 0, 0, 0.26);
+    letter-spacing: 2.4px;
+    padding: 11px 30px;
+    border-radius: 0;
+}
+
+.navbar__cta-book::before,
+.navbar__cta-book::after {
+    display: none;
+}
+
+.navbar__cta-book:hover {
+    background: var(--gold-gradient);
+    border-color: rgba(var(--gold-rgb), 0.65);
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 10px 22px rgba(var(--gold-rgb), 0.32);
+}
+
 @media (max-width: 480px) {
-    .navbar__logo-image {
-        height: 44px;
+    .navbar__inner {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .navbar__cta.btn-whatsapp {
-        display: none;
+    .navbar__logo-image {
+        height: 44px;
     }
 
     .navbar__cta {
         padding: 9px 16px;
         font-size: 0.75rem;
+    }
+
+    .navbar__cta-book {
+        letter-spacing: 1.8px;
+        padding: 9px 18px;
     }
 }

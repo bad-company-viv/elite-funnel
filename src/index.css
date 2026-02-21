@@ -2,9 +2,10 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  --gold: #c9a84c;
-  --gold-light: #e8c96c;
-  --gold-dim: #a0843a;
+  --gold: #ffd447;
+  --gold-light: #ffec9b;
+  --gold-rgb: 255, 212, 71;
+  --gold-gradient: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold) 100%);
   --black: #080808;
   --charcoal: #111111;
   --charcoal-2: #1a1a1a;
@@ -16,12 +17,13 @@
   --text-secondary: #bbbbbb;
   --card-bg: rgba(26, 26, 26, 0.95);
   --glass: rgba(255,255,255,0.04);
-  --glass-border: rgba(201,168,76,0.18);
+  --glass-border: rgba(var(--gold-rgb), 0.18);
   --radius: 12px;
   --radius-lg: 20px;
-  --shadow-gold: 0 0 40px rgba(201,168,76,0.15);
+  --shadow-gold: 0 0 40px rgba(var(--gold-rgb), 0.15);
   --shadow-card: 0 20px 60px rgba(0,0,0,0.6);
   --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --edge-offset: 20px;
 }
 
 /* ─── Reset ─── */
@@ -54,7 +56,7 @@ ul { list-style: none; }
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--charcoal); }
-::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
 /* ─── Utilities ─── */
 .container {
@@ -73,10 +75,11 @@ ul { list-style: none; }
 }
 
 .section-title span {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(var(--gold-rgb), 0.25));
 }
 
 .section-subtitle {
@@ -123,14 +126,40 @@ ul { list-style: none; }
 .btn:hover::before { transform: scaleX(1); }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  background: var(--gold-gradient);
   color: var(--black);
-  box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+  border: 1px solid rgba(var(--gold-rgb), 0.52);
+  box-shadow: 0 4px 16px rgba(var(--gold-rgb), 0.32), inset 0 1px 0 rgba(255,255,255,0.24);
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: -110%;
+  left: -35%;
+  width: 34%;
+  height: 320%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.12) 44%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.12) 56%, transparent 100%);
+  transform: translateX(-230%) rotate(20deg);
+  animation: gold-sheen 5.6s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201,168,76,0.5);
+  box-shadow: 0 8px 24px rgba(var(--gold-rgb), 0.4), inset 0 1px 0 rgba(255,255,255,0.28);
+}
+
+@keyframes gold-sheen {
+  0%,
+  70%,
+  100% {
+    transform: translateX(-230%) rotate(20deg);
+  }
+
+  20% {
+    transform: translateX(540%) rotate(20deg);
+  }
 }
 
 .btn-outline {
@@ -140,9 +169,9 @@ ul { list-style: none; }
 }
 
 .btn-outline:hover {
-  background: rgba(201,168,76,0.1);
+  background: rgba(var(--gold-rgb), 0.1);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+  box-shadow: 0 4px 20px rgba(var(--gold-rgb), 0.2);
 }
 
 .btn-whatsapp {
@@ -156,6 +185,32 @@ ul { list-style: none; }
   box-shadow: 0 8px 30px rgba(37,211,102,0.5);
 }
 
+/* ─── Floating WhatsApp ─── */
+.floating-whatsapp-link {
+  position: fixed;
+  right: var(--edge-offset);
+  bottom: var(--edge-offset);
+  z-index: 1100;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.floating-whatsapp-link:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: none;
+}
+
+.floating-whatsapp-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ─── Section Padding ─── */
 .section {
   padding: 100px 0;
@@ -165,7 +220,7 @@ ul { list-style: none; }
 .badge {
   display: inline-block;
   padding: 5px 16px;
-  border: 1px solid var(--gold-dim);
+  border: 1px solid var(--gold);
   border-radius: 50px;
   font-size: 0.72rem;
   letter-spacing: 3px;
@@ -187,7 +242,7 @@ ul { list-style: none; }
 .form-input {
   width: 100%;
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,168,76,0.2);
+  border: 1px solid rgba(var(--gold-rgb), 0.2);
   border-radius: var(--radius);
   padding: 14px 16px;
   color: var(--white);
@@ -201,8 +256,8 @@ ul { list-style: none; }
 
 .form-input:focus {
   border-color: var(--gold);
-  background: rgba(201,168,76,0.05);
-  box-shadow: 0 0 0 2px rgba(201,168,76,0.1);
+  background: rgba(var(--gold-rgb), 0.05);
+  box-shadow: 0 0 0 2px rgba(var(--gold-rgb), 0.1);
 }
 
 .form-input option {
@@ -222,4 +277,11 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
   .container { padding: 0 16px; }
+
+  .floating-whatsapp-link {
+    width: 60px;
+    height: 60px;
+    right: var(--edge-offset);
+    bottom: var(--edge-offset);
+  }
 }
