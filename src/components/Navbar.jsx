@@ -21,10 +21,11 @@ export default function Navbar() {
             <div className="container navbar__inner">
                 {/* Logo */}
                 <a href="#" className="navbar__logo">
-                    <span className="logo-icon">◆</span>
-                    <div>
-                        <span className="logo-main">ELITE PRIME CARS</span>
-                    </div>
+                    <img
+                        src="/elite-logo-white.png"
+                        alt="Elite Prime Cars"
+                        className="navbar__logo-image"
+                    />
                 </a>
 
                 {/* CTAs */}

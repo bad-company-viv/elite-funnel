@@ -56,8 +56,13 @@
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 16px;
+}
+
+.footer-logo-image {
+    display: block;
+    height: 56px;
+    width: auto;
 }
 
 .footer-tagline {
@@ -214,6 +219,10 @@
 }
 
 @media (max-width: 600px) {
+    .footer-logo-image {
+        height: 48px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         grid-gap: 32px;

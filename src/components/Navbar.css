@@ -27,33 +27,13 @@
 .navbar__logo {
     display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
 }
 
-.logo-icon {
-    color: var(--gold);
-    font-size: 1.4rem;
-    filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.6));
-}
-
-.logo-main {
+.navbar__logo-image {
     display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--white);
-    line-height: 1;
-}
-
-.logo-sub {
-    display: block;
-    font-size: 0.6rem;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-top: 2px;
+    height: 52px;
+    width: auto;
 }
 
 /* ── Actions ── */
@@ -69,6 +49,10 @@
 }
 
 @media (max-width: 480px) {
+    .navbar__logo-image {
+        height: 44px;
+    }
+
     .navbar__cta.btn-whatsapp {
         display: none;
     }

@@ -38,10 +38,11 @@ export default function Footer() {
                 {/* Brand */}
                 <div className="footer-brand">
                     <div className="footer-logo">
-                        <span className="logo-icon">◆</span>
-                        <div>
-                            <span className="logo-main">ELITE PRIME CARS</span>
-                        </div>
+                        <img
+                            src="/elite-logo-white.png"
+                            alt="Elite Prime Cars"
+                            className="footer-logo-image"
+                        />
                     </div>
                     <p className="footer-tagline">
                         Pune's most trusted luxury car rental service. Chauffeur-driven elegance for every occasion.
@@ -50,8 +51,8 @@ export default function Footer() {
                         <a href="tel:+919529375167" className="footer-contact-item">
                             <span>☎</span> +91 95293 75167
                         </a>
-                        <a href="mailto:hello@eliteprimecars.com" className="footer-contact-item">
-                            <span>✉</span> hello@eliteprimecars.com
+                        <a href="mailto:care@eliteprimecars.com" className="footer-contact-item">
+                            <span>✉</span> care@eliteprimecars.com
                         </a>
                         <div className="footer-contact-item">
                             <span>📍</span> Pune, Maharashtra, India
