@@ -121,6 +121,16 @@ export default function HowItWorks() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7 }}
                 >
+                    <video
+                        className="hiw-hero-banner__video"
+                        src="/helicopter.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-hidden="true"
+                    />
                     <div className="hiw-hero-banner__content">
                         <h3 className="hiw-hero-banner__text">For those who have arrived early in life.</h3>
                         <button type="button" className="btn btn-gold hiw-hero-banner__cta">

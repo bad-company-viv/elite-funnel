@@ -76,7 +76,7 @@ export default function Hero() {
             <div className="hero__top">
                 <div className="container hero__top-inner">
                     <motion.span
-                        className="badge"
+                        className="badge hero__badge"
                         variants={fade(0.2)}
                         initial="hidden"
                         animate="visible"
