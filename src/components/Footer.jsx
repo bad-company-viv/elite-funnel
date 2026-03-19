@@ -3,7 +3,7 @@ import './Footer.css'
 export default function Footer() {
     const year = new Date().getFullYear()
 
-    const occasions = ['Wedding Car Rental', 'Corporate Car Rental', 'Airport Transfer Pune', 'Self Drive Luxury Car', 'Anniversary Car Rental', 'Outstation Luxury Trips']
+    const occasions = ['Wedding Car Rental', 'Corporate Car Rental', 'Airport Transfer Pune', 'Anniversary Car Rental', 'Outstation Luxury Trips']
     const fleet = ['Mercedes S-Class Pune', 'BMW 7 Series Pune', 'Audi A8 Rental Pune', 'Range Rover Rental Pune']
     const areas = ['Koregaon Park', 'Kalyani Nagar', 'Viman Nagar', 'Baner', 'Hinjewadi', 'Wakad', 'Kharadi', 'Camp Area']
 

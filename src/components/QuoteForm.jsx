@@ -1,57 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './QuoteForm.css'
 
 export default function QuoteForm() {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phoneNumber: '',
-        location: '',
-        vehicle: '',
-        pickupDate: '',
-        dropoffDate: '',
-        message: ''
-    })
+    useEffect(() => {
+        // Load the embed script
+        const script = document.createElement('script')
+        script.src = 'https://link.on.bingo/js/form_embed.js'
+        script.async = true
+        document.body.appendChild(script)
 
-    const [isSubmitted, setIsSubmitted] = useState(false)
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value })
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        // Basic frontend validation (relying on required attributes mostly)
-        if (!formData.fullName || !formData.email || !formData.phoneNumber || !formData.location || !formData.message) {
-            alert('Please fill in all required fields.')
-            return
+        return () => {
+            // Cleanup script on unmount
+            document.body.removeChild(script)
         }
-
-        // Show success message
-        setIsSubmitted(true)
-
-        // WhatsApp redirect
-        const text = `Quote Request:\nName: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phoneNumber}\nLocation: ${formData.location}\nVehicle: ${formData.vehicle}\nPickup: ${formData.pickupDate}\nDrop-off: ${formData.dropoffDate}\nMessage: ${formData.message}`
-        window.open(`https://wa.me/919529375167?text=${encodeURIComponent(text)}`, '_blank')
-
-        // Reset form after a few seconds
-        setTimeout(() => {
-            setIsSubmitted(false)
-            setFormData({
-                fullName: '',
-                email: '',
-                phoneNumber: '',
-                city: '',
-                vehicle: '',
-                pickupDate: '',
-                dropoffDate: '',
-                message: ''
-            })
-            e.target.reset()
-        }, 5000)
-    }
+    }, [])
 
     return (
         <section id="quote" className="section quote-section">
@@ -67,83 +30,31 @@ export default function QuoteForm() {
                     <p className="quote-subtitle">Fill out the form below and our team will get back to you with a quote.</p>
                 </motion.div>
 
-                <motion.form
-                    className="quote-form"
-                    onSubmit={handleSubmit}
+                <motion.div
+                    className="quote-form-embed"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" name="fullName" placeholder="Enter your full name" required onChange={handleChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Email *</label>
-                            <input type="email" name="email" placeholder="your.email@example.com" required onChange={handleChange} />
-                        </div>
-                    </div>
-
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" name="phoneNumber" placeholder="+91 98765 43210" required onChange={handleChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Location in Pune *</label>
-                            <input type="text" name="location" placeholder="e.g. Koregaon Park, Baner..." required onChange={handleChange} />
-                        </div>
-                    </div>
-
-                    <div className="form-row full-width">
-                        <div className="form-group">
-                            <label>Preferred Vehicle</label>
-                            <select name="vehicle" onChange={handleChange}>
-                                <option value="">Select a vehicle (optional)</option>
-                                <option value="Mercedes S-Class">Mercedes S-Class</option>
-                                <option value="BMW 7 Series">BMW 7 Series</option>
-                                <option value="Audi A8">Audi A8</option>
-                                <option value="Range Rover">Range Rover</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Pickup Date</label>
-                            <input type="date" name="pickupDate" required onChange={handleChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Drop-off Date</label>
-                            <input type="date" name="dropoffDate" required onChange={handleChange} />
-                        </div>
-                    </div>
-
-                    <div className="form-row full-width">
-                        <div className="form-group">
-                            <label>Message / Special Requirements *</label>
-                            <textarea
-                                name="message"
-                                rows="4"
-                                placeholder="Tell us about your requirements, destination, or any special requests..."
-                                required
-                                onChange={handleChange}
-                            ></textarea>
-                        </div>
-                    </div>
-
-                    {isSubmitted && (
-                        <div className="success-message">
-                            Thanks! We've received your request and will follow up shortly. Redirecting to WhatsApp...
-                        </div>
-                    )}
-
-                    <button type="submit" className="btn btn-gold submit-btn" disabled={isSubmitted}>
-                        {isSubmitted ? 'REQUESTING...' : 'REQUEST QUOTE'}
-                    </button>
-                </motion.form>
+                    <iframe
+                        src="https://link.on.bingo/widget/form/NEnevuLGhMH3JQC1uYS7"
+                        style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+                        id="inline-NEnevuLGhMH3JQC1uYS7"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Premium Funnel"
+                        data-height="629"
+                        data-layout-iframe-id="inline-NEnevuLGhMH3JQC1uYS7"
+                        data-form-id="NEnevuLGhMH3JQC1uYS7"
+                        title="Premium Funnel"
+                    ></iframe>
+                </motion.div>
             </div>
         </section>
     )

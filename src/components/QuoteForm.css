@@ -44,6 +44,11 @@
     gap: 20px;
 }
 
+.quote-form-embed {
+    min-height: 629px;
+    width: 100%;
+}
+
 .form-row {
     display: flex;
     gap: 20px;
