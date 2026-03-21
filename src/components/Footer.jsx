@@ -110,11 +110,49 @@ export default function Footer() {
                         © {year} Elite Prime Cars. All rights reserved.
                         &nbsp;·&nbsp; Luxury Car Rentals in Pune
                     </p>
-                    <p className="footer-legal">
-                        <a href="#">Privacy Policy</a>
-                        &nbsp;·&nbsp;
-                        <a href="#">Terms of Service</a>
-                    </p>
+                    <div className="footer-right-section">
+                        <p className="footer-legal">
+                            <a href="#">Privacy Policy</a>
+                            &nbsp;·&nbsp;
+                            <a href="#">Terms of Service</a>
+                        </p>
+                        {/* Credit Section */}
+                        <div className="footer-credit">
+                            <a
+                                href="https://fabulousmedia.in"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="credit-link"
+                                aria-label="FabulousMedia"
+                            >
+                                <img
+                                    src="https://play.fabulousmedia.in/sitecredit/images/fabulousmedia.svg"
+                                    alt="FabulousMedia"
+                                    className="credit-logo"
+                                    loading="lazy"
+                                    width="80"
+                                    height="12"
+                                />
+                            </a>
+                            <div className="credit-divider"></div>
+                            <a
+                                href="https://gocommercially.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="credit-link"
+                                aria-label="GoCommercially"
+                            >
+                                <img
+                                    src="https://play.fabulousmedia.in/sitecredit/images/gocommercially.svg"
+                                    alt="GoCommercially"
+                                    className="credit-logo"
+                                    loading="lazy"
+                                    width="80"
+                                    height="12"
+                                />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
