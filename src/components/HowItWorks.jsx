@@ -133,9 +133,14 @@ export default function HowItWorks() {
                     />
                     <div className="hiw-hero-banner__content">
                         <h3 className="hiw-hero-banner__text">For those who have arrived early in life.</h3>
-                        <button type="button" className="btn btn-gold hiw-hero-banner__cta">
+                        <a 
+                            href="https://wa.me/919529375167?text=Hi%2C%20I%27m%20interested%20in%20your%20exclusive%20luxury%20car%20services" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn btn-gold hiw-hero-banner__cta"
+                        >
                             By Invite Only
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>

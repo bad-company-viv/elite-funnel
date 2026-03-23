@@ -48,7 +48,7 @@ export default function UrgencyBanner() {
                         <span>Available — Book Early</span>
                     </h2>
                     <p className="urgency-sub">
-                        Our luxury fleet books up fast, especially for wedding season and long weekends.
+                        Our luxury fleet books up fast for weddings, corporate events, and special occasions.
                         Secure your preferred car today before it's gone.
                     </p>
                     <div className="urgency-ctas">
@@ -84,8 +84,8 @@ export default function UrgencyBanner() {
                             <div className="date-chip">
                                 <span className="chip-icon">🔴</span>
                                 <div>
-                                    <strong>Feb–March</strong>
-                                    <small>Wedding Season</small>
+                                    <strong>Peak Seasons</strong>
+                                    <small>High Demand</small>
                                 </div>
                             </div>
                             <div className="date-chip">

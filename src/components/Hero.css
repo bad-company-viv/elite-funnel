@@ -63,7 +63,7 @@
 .hero__top {
     position: relative;
     z-index: 3;
-    padding-top: 72px;
+    padding-top: 140px;
     /* below fixed navbar */
     padding-bottom: 16px;
     text-align: center;
@@ -233,7 +233,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .hero__top {
-        padding-top: 74px;
+        padding-top: 130px;
     }
 
     .hero__top-inner {
