@@ -41,23 +41,6 @@ const CARS = [
     image: "/images/bmw.png",
   },
   {
-    id: 3,
-    name: "Audi A6",
-    tagline: "Intelligence Meets Elegance",
-    price: "₹7,000",
-    unit: "/ day",
-    features: [
-      "Quattro AWD",
-      "Rear Seat Entertainment",
-      "Matrix LED",
-      "Bang & Olufsen",
-    ],
-    badge: "Top Rated",
-    badgeColor: GOLD_ACCENT,
-    occasions: ["Corporate", "Airport", "Wedding"],
-    image: "/images/AUDI-a6.png",
-  },
-  {
     id: 4,
     name: "Rolls Royce",
     tagline: "Above & Beyond",
@@ -71,7 +54,7 @@ const CARS = [
     ],
     badge: "Exclusive",
     badgeColor: GOLD_ACCENT,
-    occasions: ["Wedding", "Adventure", "Corporate"],
+    occasions: ["Wedding"],
     image: "/images/rolls-royce.png",
   },
 ];

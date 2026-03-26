@@ -117,7 +117,7 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                     >
-                        Chauffeur-driven Mercedes, BMW, Audi &amp; Range Rover for
+                        Chauffeur-driven Mercedes, BMW &amp; Rolls Royce for
                         weddings, corporate events, airport transfers &amp; self drives.
                     </motion.p>
 
