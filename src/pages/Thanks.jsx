@@ -21,9 +21,29 @@ export default function Thanks() {
     `
     document.head.appendChild(script2)
 
+    // Google Tag Manager (gtm.js)
+    const gtmScript = document.createElement('script')
+    gtmScript.innerHTML = `
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PKS5MBSP');
+    `
+    document.head.prepend(gtmScript) // Placed as high as possible in head
+
+    const gtmNoscript = document.createElement('noscript')
+    gtmNoscript.innerHTML = `
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKS5MBSP"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    `
+    document.body.prepend(gtmNoscript) // Placed immediately after body tag
+
     return () => {
       if (document.head.contains(script1)) document.head.removeChild(script1)
       if (document.head.contains(script2)) document.head.removeChild(script2)
+      if (document.head.contains(gtmScript)) document.head.removeChild(gtmScript)
+      if (document.body.contains(gtmNoscript)) document.body.removeChild(gtmNoscript)
     }
   }, [])
 
