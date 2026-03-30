@@ -5,6 +5,26 @@ import { Link } from 'react-router-dom'
 export default function Thanks() {
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    // Google tag (gtag.js)
+    const script1 = document.createElement('script')
+    script1.async = true
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18034803211'
+    document.head.appendChild(script1)
+
+    const script2 = document.createElement('script')
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18034803211');
+    `
+    document.head.appendChild(script2)
+
+    return () => {
+      if (document.head.contains(script1)) document.head.removeChild(script1)
+      if (document.head.contains(script2)) document.head.removeChild(script2)
+    }
   }, [])
 
   return (
