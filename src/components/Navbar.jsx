@@ -26,16 +26,16 @@ export default function Navbar() {
   const airportTransfers = [
     { 
       name: "Mumbai Airport Transfer", 
-      href: "#quote" 
+      href: "/#quote" 
     },
     { 
       name: "Pune Airport Transfer", 
-      href: "#quote" 
+      href: "/#quote" 
     },
     { 
       name: "Mumbai → Pune Airport Transfer", 
       subtitle: "Daily pick and drop with doorstep services", 
-      href: "#quote" 
+      href: "/#quote" 
     }
   ];
 
@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className="container">
         <div className="navbar__glass-container">
           {/* Logo */}
-          <a href="#" className="navbar__logo">
+          <a href="/" className="navbar__logo">
             <img
               src="/logo.png"
               alt="Elite Prime Cars"
@@ -87,7 +87,7 @@ export default function Navbar() {
           </button>
 
           {/* Book Now Button */}
-          <a href="#quote" className="navbar__book-btn">
+          <a href="/#quote" className="navbar__book-btn">
             BOOK NOW
           </a>
         </div>

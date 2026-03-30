@@ -89,7 +89,7 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4 className="footer-col-title">Occasions</h4>
                     <ul className="footer-links">
-                        {occasions.map(o => <li key={o}><a href="#booking">{o}</a></li>)}
+                        {occasions.map(o => <li key={o}><a href="/#booking">{o}</a></li>)}
                     </ul>
                 </div>
 
@@ -97,7 +97,7 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4 className="footer-col-title">Our Fleet</h4>
                     <ul className="footer-links">
-                        {fleet.map(f => <li key={f}><a href="#fleet">{f}</a></li>)}
+                        {fleet.map(f => <li key={f}><a href="/#fleet">{f}</a></li>)}
                     </ul>
                 </div>
 

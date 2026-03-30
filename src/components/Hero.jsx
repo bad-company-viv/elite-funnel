@@ -127,8 +127,8 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                     >
-                        <a href="#booking" className="btn btn-gold">
-                             Explore Fleet
+                        <a href="/#booking" className="btn btn-gold">
+                            Book Now
                         </a>
                         <a href="tel:+919529375167" className="btn btn-outline">
                             <span>☎</span> Call Now

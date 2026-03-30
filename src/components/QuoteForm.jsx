@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import './QuoteForm.css'
 
 export default function QuoteForm() {
+    const navigate = useNavigate()
+
     useEffect(() => {
         // Load the embed script
         const script = document.createElement('script')
@@ -10,11 +13,31 @@ export default function QuoteForm() {
         script.async = true
         document.body.appendChild(script)
 
+        const handleMessage = (e) => {
+            // Check for various form submission message formats
+            const isSubmit = 
+                e.data === 'form-submit' ||
+                e.data?.message === 'form-submit' ||
+                e.data?.type === 'form-submit' ||
+                e.data === 'form-submit-success' ||
+                e.data?.message === 'form-submit-success' ||
+                e.data?.type === 'form-submit-success' ||
+                (typeof e.data === 'string' && e.data.toLowerCase().includes('submit'));
+
+            if (isSubmit) {
+                console.log('Form submission detected:', e.data);
+                navigate('/thanks')
+            }
+        }
+
+        window.addEventListener('message', handleMessage)
+
         return () => {
             // Cleanup script on unmount
             document.body.removeChild(script)
+            window.removeEventListener('message', handleMessage)
         }
-    }, [])
+    }, [navigate])
 
     return (
         <section id="quote" className="section quote-section">

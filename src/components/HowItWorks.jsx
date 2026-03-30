@@ -109,8 +109,8 @@ export default function HowItWorks() {
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <a href="#fleet" className="btn btn-gold btn-lg hiw-cta">
-                        Explore Fleet
+                    <a href="/#fleet" className="btn btn-gold btn-lg hiw-cta">
+                        View Fleet
                     </a>
                 </motion.div>
 
