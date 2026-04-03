@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Crown, BadgeCheck, Briefcase, Plane, ChevronDown } from "lucide-react";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -24,18 +25,19 @@ export default function Navbar() {
   }, []);
 
   const menuItems = [
-    { name: "Luxury Cars Rental", href: "/#cars" },
-    { name: "Value Car Rental", href: "/#cars" },
-    { name: "Corporate Car Rental", href: "/#booking" },
+    { name: "Luxury Rental", href: "/#cars", icon: Crown },
+    { name: "Value Rental", href: "/#cars", icon: BadgeCheck },
+    { name: "Corporate Rental", href: "/#booking", icon: Briefcase },
     { 
-      name: "Airport Car Rental", 
+      name: "Airport Rental", 
       href: "#",
       isMega: true,
+      icon: Plane,
       megaData: {
         sections: [
           {
             title: "Popular Routes",
-            icon: "✈️",
+            icon: <Plane size={20} className="mega-menu-icon-svg" />,
             items: [
               { name: "Mumbai Airport Transfer", href: "/#quote" },
               { name: "Pune Airport Transfer", href: "/#quote" },
@@ -89,8 +91,11 @@ export default function Navbar() {
                   className="navbar__menu-item"
                   onClick={(e) => handleItemClick(e, item)}
                 >
-                  <span className="navbar__menu-item-name">{item.name}</span>
-                  {(item.isDropdown || item.isMega) && <span className="dropdown-icon">▾</span>}
+                  {item.icon && <item.icon className="navbar__menu-icon-top" size={20} />}
+                  <div className="navbar__menu-item-content">
+                    <span className="navbar__menu-item-name">{item.name}</span>
+                    {(item.isDropdown || item.isMega) && <ChevronDown className="dropdown-icon" size={12} />}
+                  </div>
                 </a>
 
                 <AnimatePresence>
@@ -183,7 +188,10 @@ export default function Navbar() {
                   className="navbar__mobile-menu-item"
                   onClick={() => !(item.isDropdown || item.isMega) && setMobileMenuOpen(false)}
                 >
-                  <span className="navbar__mobile-menu-item-name">{item.name}</span>
+                  <div className="navbar__mobile-menu-item-content">
+                    {item.icon && <item.icon className="navbar__mobile-icon" size={18} />}
+                    <span className="navbar__mobile-menu-item-name">{item.name}</span>
+                  </div>
                 </a>
                 
                 {item.isMega && (
