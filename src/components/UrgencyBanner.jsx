@@ -53,14 +53,14 @@ export default function UrgencyBanner() {
                     </p>
                     <div className="urgency-ctas">
                         <a
-                            href="https://wa.me/919529375167?text=Hi%2C%20I%20want%20to%20check%20availability%20for%20a%20luxury%20car"
+                            href="https://wa.me/919920053379?text=Hi%2C%20I%20want%20to%20check%20availability%20for%20a%20luxury%20car"
                             target="_blank"
                             rel="noreferrer"
                             className="btn btn-gold"
                         >
                             💬 Book on WhatsApp Now
                         </a>
-                        <a href="tel:+919529375167" className="btn btn-outline">
+                        <a href="tel:+919920053379" className="btn btn-outline">
                             ☎ Call Now
                         </a>
                     </div>

@@ -25,7 +25,7 @@ export default function BookingFilter() {
     const msg = encodeURIComponent(
       `Hi Elite Prime Cars! I'd like to book a luxury car.\n📅 From: ${form.from}\n📅 To: ${form.to}\n🎯 Occasion: ${form.occasion}\n📍 Pickup: ${form.pickup}`,
     );
-    window.open(`https://wa.me/919529375167?text=${msg}`, "_blank");
+    window.open(`https://wa.me/919920053379?text=${msg}`, "_blank");
   };
 
   return (
@@ -104,7 +104,7 @@ export default function BookingFilter() {
             >
               💬 Check Availability on WhatsApp
             </motion.button>
-            <a href="tel:+919529375167" className="btn btn-outline booking-btn">
+            <a href="tel:+919920053379" className="btn btn-outline booking-btn">
               ☎ Call for Instant Quote
             </a>
           </div>

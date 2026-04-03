@@ -173,7 +173,7 @@ export default function CarShowcase() {
 
                       <div className="car-ctas">
                         <a
-                          href={`https://wa.me/919529375167?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(car.name)}%20for%20my%20occasion`}
+                          href={`https://wa.me/919920053379?text=Hi%2C%20I%20want%20to%20book%20${encodeURIComponent(car.name)}%20for%20my%20occasion`}
                           target="_blank"
                           rel="noreferrer"
                           className="btn btn-gold car-btn"
@@ -181,7 +181,7 @@ export default function CarShowcase() {
                           Book Now
                         </a>
                         <a
-                          href="tel:+919529375167"
+                          href="tel:+919920053379"
                           className="btn btn-outline car-btn"
                         >
                           Call

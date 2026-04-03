@@ -130,7 +130,7 @@ export default function Hero() {
                         <a href="/#booking" className="btn btn-gold">
                             Book Now
                         </a>
-                        <a href="tel:+919529375167" className="btn btn-outline">
+                        <a href="tel:+919920053379" className="btn btn-outline">
                             <span>☎</span> Call Now
                         </a>
                     </motion.div>
