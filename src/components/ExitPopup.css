@@ -108,12 +108,19 @@
     margin-bottom: 15px;
 }
 
+.exit-iframe-container {
+    width: 100%;
+    margin-top: 10px;
+    background: transparent;
+}
+
 @media (max-width: 480px) {
     .exit-popup-card {
-        padding: 30px 20px;
+        padding: 30px 15px;
+        width: 95%;
     }
     .exit-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .exit-subtitle {
         font-size: 0.85rem;

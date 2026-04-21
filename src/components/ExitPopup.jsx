@@ -4,12 +4,7 @@ import "./ExitPopup.css";
 
 export default function ExitPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
+
 
   useEffect(() => {
     const handleMouseLeave = (e) => {
@@ -20,23 +15,21 @@ export default function ExitPopup() {
       }
     };
 
+    // Load the embed script
+    const script = document.createElement('script')
+    script.src = 'https://link.on.bingo/js/form_embed.js'
+    script.async = true
+    document.body.appendChild(script)
+
     document.addEventListener("mouseleave", handleMouseLeave);
-    return () => document.removeEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      document.removeEventListener("mouseleave", handleMouseLeave)
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
+    };
   }, []);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const msg = encodeURIComponent(
-      `Hi Elite Prime Cars! I want a callback.\n\n👤 Name: ${formData.name}\n📧 Email: ${formData.email}\n📞 Phone: ${formData.phone}`
-    );
-    window.open(`https://wa.me/919920053379?text=${msg}`, "_blank");
-    setSubmitted(true);
-    setTimeout(() => setIsOpen(false), 2000);
-  };
 
   return (
     <AnimatePresence>
@@ -49,56 +42,30 @@ export default function ExitPopup() {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
           >
             <button className="exit-close" onClick={() => setIsOpen(false)}>✕</button>
-            {!submitted ? (
-              <>
-                <div className="exit-header">
-                  <h2 className="exit-title">Wait! Don&apos;t Leave Empty Handed</h2>
-                  <p className="exit-subtitle">Get a <span className="gold-text">Free Consultation</span> and special offers on your first booking.</p>
-                </div>
-                <form className="exit-form" onSubmit={handleSubmit}>
-                  <div className="exit-form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="exit-form-group">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="exit-form-group">
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Your Phone Number"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <button type="submit" className="btn btn-gold w-full exit-btn">
-                    Get a Call Back
-                  </button>
-                </form>
-                <p className="exit-footer">🔒 Your information is safe with us.</p>
-              </>
-            ) : (
-              <div className="exit-success">
-                <div className="success-icon">✓</div>
-                <h3>Thank You!</h3>
-                <p>We will get back to you shortly.</p>
-              </div>
-            )}
+            <div className="exit-header">
+                <h2 className="exit-title">Wait! Don&apos;t Leave Empty Handed</h2>
+                <p className="exit-subtitle">Get a <span className="gold-text">Free Consultation</span> and special offers on your first booking.</p>
+            </div>
+            
+            <div className="exit-iframe-container" style={{ minHeight: '450px' }}>
+                <iframe
+                    src="https://link.on.bingo/widget/form/2T1tDXXywOCY4cQmyDEm"
+                    style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+                    id="inline-2T1tDXXywOCY4cQmyDEm" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Form 3"
+                    data-height="434"
+                    data-layout-iframe-id="inline-2T1tDXXywOCY4cQmyDEm"
+                    data-form-id="2T1tDXXywOCY4cQmyDEm"
+                    title="Form 3"
+                ></iframe>
+            </div>
           </motion.div>
         </div>
       )}

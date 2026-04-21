@@ -52,10 +52,22 @@ export default function Navbar() {
 
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // Prevent redirect for mega menu triggers
-  const handleItemClick = (e, item) => {
+  // Prevent redirect for mega menu triggers and handle smooth scroll
+  const handleItemClick = (e, href, item = {}) => {
     if (item.isMega || item.isDropdown) {
       e.preventDefault();
+      return;
+    }
+
+    if (href && (href.startsWith("/#") || href.startsWith("#"))) {
+      const id = href.split("#")[1];
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: "smooth" });
+        setMobileMenuOpen(false);
+        setActiveDropdown(null);
+      }
     }
   };
 
@@ -89,7 +101,7 @@ export default function Navbar() {
                 <a
                   href={item.href}
                   className="navbar__menu-item"
-                  onClick={(e) => handleItemClick(e, item)}
+                  onClick={(e) => handleItemClick(e, item.href, item)}
                 >
                   {item.icon && <item.icon className="navbar__menu-icon-top" size={20} />}
                   <div className="navbar__menu-item-content">
@@ -119,7 +131,11 @@ export default function Navbar() {
                                 <ul className="mega-menu-list">
                                   {section.items.map((sub, iIdx) => (
                                     <li key={iIdx}>
-                                      <a href={sub.href} className="mega-menu-link">
+                                      <a 
+                                        href={sub.href} 
+                                        className="mega-menu-link"
+                                        onClick={(e) => handleItemClick(e, sub.href)}
+                                      >
                                         <span className="mega-menu-link-name">{sub.name}</span>
                                         {sub.subtitle && <span className="mega-menu-link-sub">{sub.subtitle}</span>}
                                       </a>
@@ -138,7 +154,12 @@ export default function Navbar() {
                         </div>
                       ) : (
                         item.dropdownItems.map((sub, sIdx) => (
-                          <a key={sIdx} href={sub.href} className="navbar__dropdown-item" onClick={() => setActiveDropdown(null)}>
+                          <a 
+                            key={sIdx} 
+                            href={sub.href} 
+                            className="navbar__dropdown-item" 
+                            onClick={(e) => handleItemClick(e, sub.href)}
+                          >
                             <span className="navbar__dropdown-item-name">{sub.name}</span>
                             {sub.subtitle && <span className="navbar__dropdown-item-sub">{sub.subtitle}</span>}
                           </a>
@@ -165,7 +186,11 @@ export default function Navbar() {
           </button>
 
           {/* Book Now Button */}
-          <a href="/#quote" className="navbar__book-btn">
+          <a 
+            href="/#quote" 
+            className="navbar__book-btn"
+            onClick={(e) => handleItemClick(e, "/#quote")}
+          >
             BOOK NOW
           </a>
         </div>
@@ -186,7 +211,7 @@ export default function Navbar() {
                 <a
                   href={item.href}
                   className="navbar__mobile-menu-item"
-                  onClick={() => !(item.isDropdown || item.isMega) && setMobileMenuOpen(false)}
+                  onClick={(e) => handleItemClick(e, item.href, item)}
                 >
                   <div className="navbar__mobile-menu-item-content">
                     {item.icon && <item.icon className="navbar__mobile-icon" size={18} />}
@@ -204,7 +229,7 @@ export default function Navbar() {
                             key={iIdx}
                             href={sub.href}
                             className="navbar__mobile-submenu-item"
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={(e) => handleItemClick(e, sub.href)}
                           >
                             {sub.name}
                           </a>
@@ -221,7 +246,7 @@ export default function Navbar() {
                         key={sIdx}
                         href={sub.href}
                         className="navbar__mobile-submenu-item"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={(e) => handleItemClick(e, sub.href)}
                       >
                         {sub.name}
                       </a>

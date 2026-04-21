@@ -69,7 +69,7 @@ export default function CarShowcase() {
       : CARS.filter((c) => c.occasions.includes(activeFilter));
 
   return (
-    <section id="fleet" className="section fleet-section">
+    <section id="cars" className="section fleet-section">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

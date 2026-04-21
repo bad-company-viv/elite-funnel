@@ -7,6 +7,19 @@ export default function Footer() {
     const fleet = ['Mercedes E-Class Pune', 'BMW 7 Series Pune', , 'Rolls Royce Rental Pune']
     const areas = ['Koregaon Park', 'Kalyani Nagar', 'Viman Nagar', 'Baner', 'Hinjewadi', 'Wakad', 'Kharadi', 'Camp Area']
 
+    const handleScroll = (e, href) => {
+        if (href.startsWith('/#') || href.startsWith('#')) {
+            const id = href.includes('#') ? href.split('#')[1] : null;
+            if (id) {
+                const element = document.getElementById(id);
+                if (element) {
+                    e.preventDefault();
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    };
+
     return (
         <footer id="contact" className="footer">
             <div className="footer-top-line" />
@@ -89,7 +102,11 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4 className="footer-col-title">Occasions</h4>
                     <ul className="footer-links">
-                        {occasions.map(o => <li key={o}><a href="/#booking">{o}</a></li>)}
+                        {occasions.map(o => (
+                            <li key={o}>
+                                <a href="/#booking" onClick={(e) => handleScroll(e, '/#booking')}>{o}</a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -97,7 +114,11 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4 className="footer-col-title">Our Fleet</h4>
                     <ul className="footer-links">
-                        {fleet.map(f => <li key={f}><a href="/#fleet">{f}</a></li>)}
+                        {fleet.map(f => (
+                            <li key={f}>
+                                <a href="/#cars" onClick={(e) => handleScroll(e, '/#cars')}>{f}</a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
